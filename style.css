@@ -1,7 +1,4 @@
 
-
-
-/* ==================== المتغيرات (الألوان) ==================== */
 :root {
   /* ✏️ تقدر تغير الألوان دي براحتك */
   --bg: #050505;           /* لون الخلفية الرئيسية */
@@ -250,8 +247,7 @@ nav.scrolled {
   transform: translateY(30px);
   animation: fadeUp 0.8s 0.4s forwards;
 }
-.hero-name span.name-placeholder { color: var(--text); display: block; }
-.hero-name span.role {
+.hero-name span.name-placeholder { color: var(--text); display: block; font-weight: 400; text-transform: none; }.hero-name span.role {
   color: transparent;
   -webkit-text-stroke: 1px var(--accent); /* النص المفرغ الأخضر */
   display: block;
@@ -479,4 +475,93 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
   60% {clip-path:inset(75% 0 10% 0);transform:translate(3px)}
   80% {clip-path:inset(10% 0 80% 0);transform:translate(-1px)}
   100%{clip-path:none;transform:translate(0)}
+}
+
+
+/* ==================== RESPONSIVE (موبايل وتابلت) ==================== */
+
+/* تابلت */
+@media (max-width: 1024px) {
+  nav { padding: 20px 24px; }
+  .nav-links { gap: 24px; }
+  section { padding: 80px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .projects-grid { grid-template-columns: repeat(2,1fr); }
+  .exp-item { grid-template-columns: 140px 1fr auto; gap: 24px; }
+  .hero-inner { gap: 32px; }
+  .hero-photo-wrap { width: 240px; height: 300px; }
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  /* الـ cursor المخصص مش محتاجه على موبايل */
+  .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+
+  /* الـ Nav */
+  nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; }
+  .nav-links { display: none; } /* بنخبي الـ links على موبايل */
+  .nav-logo { font-size: 22px; }
+  .nav-cv { font-size: 10px; padding: 6px 14px; }
+
+  /* الـ Hero */
+  #hero { padding: 0 20px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    gap: 32px;
+  }
+  .hero-photo-wrap {
+    width: 200px;
+    height: 250px;
+    margin: 0 auto;
+    order: -1; /* الصورة فوق الاسم على موبايل */
+  }
+  .hero-line { font-size: 10px; text-align: center; }
+  .hero-name { font-size: clamp(52px, 15vw, 80px); text-align: center; letter-spacing: -1px; }
+  .typewriter-wrap { justify-content: center; flex-wrap: wrap; }
+  .tw-prefix, #typewriter { font-size: 14px; }
+  .hero-cta { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; padding: 14px 24px; }
+  .scroll-indicator { left: 50%; transform: translateX(-50%); }
+
+  /* الـ Sections */
+  section { padding: 64px 20px; }
+  .section-title { font-size: clamp(36px, 10vw, 60px); margin-bottom: 40px; }
+
+  /* الـ About */
+  .stats-row { gap: 24px; }
+  .stat-number { font-size: 48px; }
+  .about-text { font-size: 16px; }
+
+  /* الـ Projects */
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { padding: 28px; }
+  .project-num { font-size: 56px; }
+
+  /* الـ Experience */
+  .exp-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 28px 0;
+  }
+  .exp-link { display: none; } /* بنخبي السهم على موبايل */
+
+  /* الـ Contact */
+  .contact-big { font-size: clamp(44px, 12vw, 80px); }
+  .social-row { flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .contact-email { font-size: 14px; }
+
+  /* الـ Footer */
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px 20px; }
+
+  /* الـ Marquee */
+  .marquee-track span { font-size: 18px; }
+}
+
+/* موبايل صغير */
+@media (max-width: 400px) {
+  .hero-name { font-size: clamp(42px, 13vw, 60px); }
+  .hero-photo-wrap { width: 160px; height: 200px; }
 }
