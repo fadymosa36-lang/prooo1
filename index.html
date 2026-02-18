@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ✏️ غير العنوان ده لاسمك -->
+<title>Portfolio</title>
+
+<!-- الخطوط - ماتغيرهمش -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- ربط ملف الـ CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- عنصر الـ Cursor المخصص - ماتلمسوش -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ==================== الـ NAV ==================== -->
+<nav id="navbar">
+  <!-- ✏️ غير DEV. لأي اختصار لاسمك -->
+  <div class="nav-logo">DEV.</div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- زرار تحميل الـ CV - في الـ JS هتحدد مسار الـ PDF -->
+  <a href="#" class="nav-cv" id="navCvBtn"><span>⬇ Download CV</span></a>
+</nav>
+
+
+<!-- ==================== الـ HERO (الصفحة الأولى) ==================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+
+  <!-- ✏️ غير النص ده - بيظهر فوق اسمك -->
+  <div class="hero-line">Available for work — 2026</div>
+
+  <div class="hero-inner">
+    <div class="hero-name">
+      <!-- ✏️ حط اسمك هنا -->
+      <span class="name-placeholder"> Fady Mosa Noshy</span>
+      <!-- ✏️ لو مش Developer غيرها -->
+      <span class="role">DEVELOPER</span>
+    </div>
+
+    <!-- إطار الصورة - دوس عليه في المتصفح وارفع صورتك -->
+    <div class="hero-photo-wrap">
+<img id="heroPhoto" class="hero-photo" src="fffff.jpg" alt="Profile Photo" style="display:block;" />
+<div class="hero-photo-placeholder" id="photoPlaceholder" style="display:none;" onclick="document.getElementById('photoInput').click()">
+      </div>
+      <input type="file" id="photoInput" accept="image/*" style="display:none;" />
+    </div>
+  </div>
+
+  <!-- الـ Typewriter - الجمل اللي بتتكتب وتتمسح في الـ JS -->
+  <div class="typewriter-wrap">
+    <span class="tw-prefix"> build —</span>
+    <span id="typewriter"></span>
+    <span class="cursor-blink"></span>
+  </div>
+
+  <!-- الأزرار -->
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="#contact" class="btn-outline">Contact me</a>
+  </div>
+
+  <!-- السهم المتحرك -->
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll</span>
+    <div class="arrow-box" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      <span class="arrow-icon">↓</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== الـ MARQUEE (الشريط المتحرك) ==================== -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <!-- ✏️ غير النصوص دي لو حبيت -->
+    <span>FULL STACK DEVELOPER</span><span>✦</span>
+    <span>UI/UX ENTHUSIAST</span><span>✦</span>
+    <span>PROBLEM SOLVER</span><span>✦</span>
+    <span>OPEN TO OPPORTUNITIES</span><span>✦</span>
+    <!-- كرر نفس النصوص عشان الـ loop يشتغل صح -->
+    <span>FULL STACK DEVELOPER</span><span>✦</span>
+    <span>UI/UX ENTHUSIAST</span><span>✦</span>
+    <span>PROBLEM SOLVER</span><span>✦</span>
+    <span>OPEN TO OPPORTUNITIES</span><span>✦</span>
+  </div>
+</div>
+
+
+<!-- ==================== قسم ABOUT ==================== -->
+<section id="about">
+  <div class="section-title">WHO I am</div>
+  <div class="about-grid reveal">
+    <div>
+      <!-- ✏️ غير النص ده لكلامك عن نفسك -->
+<p class="about-text">I am a <strong>highly motivated Computer and Information Sciences student</strong> with a strong passion for technology and professional growth. I have built a solid foundation in web development, gaining a clear understanding of how modern web applications and internet technologies work.</p>    
+<p class="about-text">I am particularly interested in <strong>cloud computing</strong> and continuously developing my skills in cloud platforms, operating systems, and networking fundamentals. I possess strong communication, teamwork, and problem-solving abilities, enabling me to collaborate effectively and adapt quickly in dynamic technical environments.</p>
+      <div class="stats-row">
+        <!-- ✏️ غير الأرقام دي -->
+        <div class="stat-item"><div class="stat-number">5+</div><div class="stat-label">Years Exp</div></div>
+        <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Projects</div></div>
+        <div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Clients</div></div>
+      </div>
+    </div>
+
+    <!-- ✏️ غير أسماء الـ Skills والنسب المئوية -->
+    <div class="skills-grid">
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">JavaScript / TypeScript</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">React / Next.js</span><span class="skill-pct">92%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">Node.js / Express</span><span class="skill-pct">88%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">Python / Django</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">UI/UX & Design</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-header"><span class="skill-name">Databases (SQL/NoSQL)</span><span class="skill-pct">87%</span></div>
+        <div class="skill-bar"><div class="skill-fill" data-width="87"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== قسم PROJECTS ==================== -->
+<section id="projects">
+  <div class="section-title">PROJECTS</div>
+  <div class="projects-grid">
+
+    <!-- ✏️ PROJECT 1 - غير كل البيانات دي -->
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <div class="project-title">Digital Safe Lock System</div>
+      <div class="project-desc">The system is based on a 4-digit binary password, where:
+         A correct password grants access to the system.
+                        An incorrect password increases an error counter.
+                        After 3 consecutive wrong attempts, the system triggers a full lock and stops responding until reset.
+                        The project demonstrates practical use of:
+                        XOR comparison logic
+                        Counters & lock mechanisms
+                        Even / Odd detection using LSB
+                        Seven Segment Displays
+                        Password hiding for enhanced security</div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">MongoDB</span>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+
+    <!-- ✏️ PROJECT 2 -->
+    <div class="project-card reveal" style="transition-delay:0.1s">
+      <div class="project-num">02</div>
+      <div class="project-title">اسم المشروع الثاني</div>
+      <div class="project-desc">وصف للمشروع الثاني. اذكر التكنولوجيا المستخدمة والنتيجة.</div>
+      <div class="project-tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind</span>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+
+    <!-- ✏️ PROJECT 3 -->
+    <div class="project-card reveal" style="transition-delay:0.2s">
+      <div class="project-num">03</div>
+      <div class="project-title">اسم المشروع الثالث</div>
+      <div class="project-desc">وصف للمشروع الثالث. اعرض تنوعك - backend أو mobile أو AI.</div>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==================== قسم EXPERIENCE ==================== -->
+<section id="experience">
+  <div class="section-title">EXPERIENCE</div>
+  <div class="exp-list">
+
+    <!-- ✏️ EXPERIENCE 1 - أحدث وظيفة -->
+    <div class="exp-item reveal">
+      <div class="exp-date">2026 — Present</div><!-- ✏️ التاريخ -->
+      <div>
+        <div class="exp-role">Senior Frontend Developer</div><!-- ✏️ المسمى الوظيفي -->
+        <div class="exp-desc">Participating in an intensive Front-End Web Development track as part of the Rowad Misr Digital initiative. I am gaining hands-on experience in building responsive and interactive user interfaces. Key learning areas and technologies include:
+
+                Core Technologies: Building semantic and structured web pages using HTML5 and styling with CSS3.
+
+                Interactivity: Implementing dynamic features and logic using JavaScript.
+
+                Modern Frameworks
+
+                Responsive Design: Ensuring web applications work seamlessly across various devices and screen sizes.
+
+                Problem Solving: Applying logical thinking to debug and optimize front-end code.
+
+                HTML5, Cascading Style Sheets (CSS) and +3 skills</div><!-- ✏️ الوصف -->
+      </div>
+      <a href="#" class="exp-link">↗</a><!-- ✏️ حط رابط الشركة -->
+    </div>
+
+    <!-- ✏️ EXPERIENCE 2 -->
+    <!-- <div class="exp-item reveal">
+      <div class="exp-date">2021 — 2023</div>
+      <div>
+        <div class="exp-company">الشركة السابقة</div>
+        <div class="exp-role">Full Stack Developer</div>
+        <div class="exp-desc">دور تاني، إنجازات تانية. اعرض نموك واتساع خبرتك.</div>
+      </div>
+      <a href="#" class="exp-link">↗</a>
+    </div> -->
+
+    <!-- ✏️ EXPERIENCE 3 -->
+    <!-- <div class="exp-item reveal">
+      <div class="exp-date">2019 — 2021</div>
+      <div>
+        <div class="exp-company">أول شركة</div>
+        <div class="exp-role">Junior Developer</div>
+        <div class="exp-desc">من هنا بدأت. كل واحد عنده بداية - قولها بثقة.</div>
+      </div>
+      <a href="#" class="exp-link">↗</a>
+    </div> -->
+
+  </div>
+</section>
+
+
+<!-- ==================== قسم CONTACT ==================== -->
+<section id="contact">
+  <div class="contact-big reveal">LET'S BUILD<br>SOMETHING.</div>
+
+  <!-- ✏️ حط ايميلك هنا في الاتنين -->
+  <a href="mosafady262@gmail.com" class="contact-email reveal">fady***a262@gmail.com</a>
+
+  <a href="mosafadya262@gmail.com" class="btn-primary reveal"> Hello →</a>
+
+  <!-- ✏️ حط روابط السوشيال ميديا بتاعتك -->
+  <div class="social-row reveal">
+    <a href="رابط GitHub بتاعك" class="social-link">GitHub</a>
+    <a href="https://www.linkedin.com/in/fady-mosa" class="social-link">LinkedIn</a>
+    <a href="رابط Twitter بتاعك" class="social-link">Twitter</a>
+    <a href="رابط Dribbble بتاعك" class="social-link">Dribbble</a>
+  </div>
+</section>
+
+
+<!-- ==================== الـ FOOTER ==================== -->
+<footer>
+  <!-- ✏️ غير اسمك -->
+  <p>© 2025 — Fady Mosa</p>
+  <p>Crafted with ❤ </p>
+</footer>
+
+<!-- ربط ملف الـ JS -->
+<script src="script.js"></script>
+</body>
+</html>
