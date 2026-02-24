@@ -1,17 +1,16 @@
 
 :root {
-  /* ✏️ تقدر تغير الألوان دي براحتك */
-  --bg: #050505;           /* لون الخلفية الرئيسية */
-  --surface: #0d0d0d;      /* لون خلفية الـ sections */
-  --accent: #00ff88;       /* اللون الأخضر الأساسي */
-  --accent2: #ff3c6e;      /* لون ثانوي (مش مستخدم كتير) */
-  --accent3: #4d9fff;      /* لون تالت (في الـ skill bars) */
-  --text: #e8e8e8;         /* لون النص العادي */
-  --muted: #555;           /* لون النص الخافت */
-  --border: #1a1a1a;       /* لون الحدود */
+  
+  --bg: #050505;           
+  --surface: #0d0d0d;      
+  --accent: #00ff88;      
+  --accent2: #ff3c6e;     
+  --accent3: #4d9fff;      
+  --text: #e8e8e8;        
+  --muted: #555;           
+  --border: #1a1a1a;       
 }
 
-/* ==================== Reset & Base ==================== */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -19,10 +18,9 @@ body {
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
-  cursor: none; /* بيخفي الـ cursor الأصلي عشان يظهر الـ custom cursor */
+  cursor: none; 
 }
 
-/* ==================== Custom Cursor ==================== */
 .cursor {
   width: 12px; height: 12px;
   background: var(--accent);
@@ -44,7 +42,6 @@ body {
   mix-blend-mode: difference;
 }
 
-/* ==================== Noise Overlay (تأثير الضوضاء الخفيف) ==================== */
 body::before {
   content: '';
   position: fixed;
@@ -55,7 +52,6 @@ body::before {
   opacity: 0.4;
 }
 
-/* ==================== NAV ==================== */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -100,7 +96,6 @@ nav.scrolled {
 .nav-links a:hover { color: var(--accent); }
 .nav-links a:hover::after { width: 100%; }
 
-/* زرار Download CV في الـ Nav */
 .nav-cv {
   display: inline-flex;
   align-items: center;
@@ -130,7 +125,6 @@ nav.scrolled {
 .nav-cv:hover { color: #000; }
 .nav-cv span { position: relative; z-index: 1; }
 
-/* ==================== HERO ==================== */
 #hero {
   height: 100vh;
   display: flex;
@@ -147,7 +141,6 @@ nav.scrolled {
   gap: 48px;
 }
 
-/* إطار الصورة الشخصية */
 .hero-photo-wrap {
   position: relative;
   width: 300px;
@@ -215,7 +208,7 @@ nav.scrolled {
   opacity: 0.5;
 }
 
-/* خلفية الـ Hero */
+
 .hero-bg {
   position: absolute; inset: 0;
   background:
@@ -223,7 +216,6 @@ nav.scrolled {
     radial-gradient(ellipse 50% 50% at 10% 80%, rgba(77,159,255,0.05) 0%, transparent 60%);
 }
 
-/* النص الصغير فوق الاسم */
 .hero-line {
   font-family: 'Space Mono', monospace;
   font-size: 13px;
@@ -236,10 +228,9 @@ nav.scrolled {
   animation: fadeUp 0.8s 0.2s forwards;
 }
 
-/* الاسم الكبير */
 .hero-name {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(80px, 13vw, 180px); /* ✏️ غير الحجم لو حبيت */
+  font-size: clamp(80px, 13vw, 180px); 
   line-height: 0.9;
   letter-spacing: -2px;
   margin-bottom: 32px;
@@ -249,11 +240,10 @@ nav.scrolled {
 }
 .hero-name span.name-placeholder { color: var(--text); display: block; font-weight: 400; text-transform: none; }.hero-name span.role {
   color: transparent;
-  -webkit-text-stroke: 1px var(--accent); /* النص المفرغ الأخضر */
+  -webkit-text-stroke: 1px var(--accent); 
   display: block;
 }
 
-/* الـ Typewriter */
 .typewriter-wrap {
   display: flex;
   align-items: center;
@@ -273,7 +263,6 @@ nav.scrolled {
   vertical-align: middle;
 }
 
-/* الأزرار */
 .hero-cta {
   display: flex; gap: 20px;
   opacity: 0;
@@ -306,7 +295,6 @@ nav.scrolled {
 }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
-/* السهم المتحرك */
 .scroll-indicator {
   position: absolute;
   bottom: 40px; left: 48px;
@@ -353,7 +341,6 @@ nav.scrolled {
 }
 .arrow-box:hover .arrow-icon { color: #000; }
 
-/* ==================== SECTIONS (عناصر مشتركة) ==================== */
 section { padding: 120px 48px; position: relative; }
 .section-label {
   font-family: 'Space Mono', monospace;
@@ -373,7 +360,6 @@ section { padding: 120px 48px; position: relative; }
   margin-bottom: 64px;
 }
 
-/* ==================== ABOUT ==================== */
 #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
 .about-text { font-size: 18px; line-height: 1.8; color: #999; margin-bottom: 32px; }
@@ -382,7 +368,6 @@ section { padding: 120px 48px; position: relative; }
 .stat-number { font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--accent); line-height: 1; }
 .stat-label { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
 
-/* الـ Skill Bars */
 .skills-grid { display: flex; flex-direction: column; gap: 20px; }
 .skill-row { display: flex; flex-direction: column; gap: 8px; }
 .skill-header { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 13px; }
@@ -396,7 +381,6 @@ section { padding: 120px 48px; position: relative; }
   transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* ==================== PROJECTS ==================== */
 .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
 .project-card {
   background: var(--surface);
@@ -422,7 +406,6 @@ section { padding: 120px 48px; position: relative; }
 .tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; padding: 4px 10px; border: 1px solid var(--border); color: var(--muted); text-transform: uppercase; }
 .project-arrow { font-size: 24px; transition: all 0.3s; color: var(--muted); }
 
-/* ==================== EXPERIENCE ==================== */
 #experience { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .exp-list { display: flex; flex-direction: column; }
 .exp-item { display: grid; grid-template-columns: 200px 1fr auto; gap: 48px; padding: 40px 0; border-bottom: 1px solid var(--border); align-items: start; }
@@ -434,7 +417,6 @@ section { padding: 120px 48px; position: relative; }
 .exp-link { font-family: 'Space Mono', monospace; font-size: 20px; color: var(--muted); transition: color 0.3s, transform 0.3s; display: inline-block; margin-top: 4px; text-decoration: none; }
 .exp-item:hover .exp-link { color: var(--accent); transform: rotate(45deg); }
 
-/* ==================== CONTACT ==================== */
 #contact { text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; }
 #contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 100% 60% at 50% 100%, rgba(0,255,136,0.06) 0%, transparent 70%); }
 .contact-big { font-family: 'Bebas Neue', sans-serif; font-size: clamp(60px,12vw,160px); line-height: 1; letter-spacing: 2px; margin-bottom: 24px; }
@@ -444,16 +426,14 @@ section { padding: 120px 48px; position: relative; }
 .social-link { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
 .social-link:hover { color: var(--accent); }
 
-/* ==================== FOOTER ==================== */
 footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
 
-/* ==================== MARQUEE ==================== */
 .marquee-section { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 24px 0; background: var(--accent); }
 .marquee-track { display: flex; gap: 60px; animation: marquee 20s linear infinite; white-space: nowrap; width: max-content; }
 .marquee-track span { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 4px; color: #000; }
 
-/* ==================== ANIMATIONS ==================== */
+
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }
 @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -462,11 +442,9 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
   50%      { transform: translateY(6px);  opacity: 1;   }
 }
 
-/* Reveal animation (بتشتغل لما تسكرول) */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* Glitch effect على الاسم لما تعمل hover */
 .hero-name:hover span.name-placeholder { animation: glitch 0.4s steps(2,end); }
 @keyframes glitch {
   0%  {clip-path:inset(0 0 85% 0);transform:translate(-3px)}
@@ -478,9 +456,7 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
 }
 
 
-/* ==================== RESPONSIVE (موبايل وتابلت) ==================== */
 
-/* تابلت */
 @media (max-width: 1024px) {
   nav { padding: 20px 24px; }
   .nav-links { gap: 24px; }
@@ -492,19 +468,15 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
   .hero-photo-wrap { width: 240px; height: 300px; }
 }
 
-/* موبايل */
 @media (max-width: 768px) {
-  /* الـ cursor المخصص مش محتاجه على موبايل */
   .cursor, .cursor-ring { display: none; }
   body { cursor: auto; }
 
-  /* الـ Nav */
   nav { padding: 16px 20px; flex-wrap: wrap; gap: 12px; }
-  .nav-links { display: none; } /* بنخبي الـ links على موبايل */
+  .nav-links { display: none; } 
   .nav-logo { font-size: 22px; }
   .nav-cv { font-size: 10px; padding: 6px 14px; }
 
-  /* الـ Hero */
   #hero { padding: 0 20px; }
   .hero-inner {
     grid-template-columns: 1fr;
@@ -516,7 +488,7 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
     width: 200px;
     height: 250px;
     margin: 0 auto;
-    order: -1; /* الصورة فوق الاسم على موبايل */
+    order: -1;
   }
   .hero-line { font-size: 10px; text-align: center; }
   .hero-name { font-size: clamp(52px, 15vw, 80px); text-align: center; letter-spacing: -1px; }
@@ -526,41 +498,33 @@ footer p { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--m
   .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; padding: 14px 24px; }
   .scroll-indicator { left: 50%; transform: translateX(-50%); }
 
-  /* الـ Sections */
   section { padding: 64px 20px; }
   .section-title { font-size: clamp(36px, 10vw, 60px); margin-bottom: 40px; }
 
-  /* الـ About */
   .stats-row { gap: 24px; }
   .stat-number { font-size: 48px; }
   .about-text { font-size: 16px; }
 
-  /* الـ Projects */
   .projects-grid { grid-template-columns: 1fr; }
   .project-card { padding: 28px; }
   .project-num { font-size: 56px; }
 
-  /* الـ Experience */
   .exp-item {
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 28px 0;
   }
-  .exp-link { display: none; } /* بنخبي السهم على موبايل */
+  .exp-link { display: none; }
 
-  /* الـ Contact */
   .contact-big { font-size: clamp(44px, 12vw, 80px); }
   .social-row { flex-wrap: wrap; justify-content: center; gap: 20px; }
   .contact-email { font-size: 14px; }
 
-  /* الـ Footer */
   footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px 20px; }
 
-  /* الـ Marquee */
   .marquee-track span { font-size: 18px; }
 }
 
-/* موبايل صغير */
 @media (max-width: 400px) {
   .hero-name { font-size: clamp(42px, 13vw, 60px); }
   .hero-photo-wrap { width: 160px; height: 200px; }
